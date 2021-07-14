@@ -1,0 +1,29 @@
+<div id="nav">
+    <div id="nav-menu">
+        <ul>
+            <li><a href="/">首页</a></li>
+           
+                {{/*如果已经登录，才会显示"分享躺平"*/}}
+                {{if .IsLogin}}
+                    <li><a href="/article/add">分享躺平</a></li>
+                {{end}}
+            
+            <li><a href="/tags">分类</a></li>
+            <!--<li><a href="/album">照片墙</a></li>-->
+            <li><a href="/aboutme">关于本站</a></li>
+        </ul>
+    </div>
+
+
+    <div id="nav-login">
+        <ul>
+        {{if .IsLogin}}
+            <li><a href='javascript:if(confirm("确定退出吗？")){location="/exit"}'>退出</a></li>
+        {{else}}
+            <li><a href="/login">登录</a></li>
+            <li><a href="/register">注册</a></li>
+        {{end}}
+        </ul>
+    </div>
+
+</div>
